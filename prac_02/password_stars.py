@@ -1,4 +1,7 @@
-"""Get a valid password using minimum length and display with asterisks"""
+"""
+CP1404/CP5632 - Practical
+Get a valid password using minimum length and display with asterisks
+"""
 
 MINIMUM_LENGTH = 8
 
