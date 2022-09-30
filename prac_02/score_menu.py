@@ -7,7 +7,7 @@ MENU_STRING = "(E)nter Score\n(R)esult\n(S)tars!\n(Q)uit"
 
 
 def main():
-    """Display Menu with options to enter a score, determine a result or print stars"""
+    """Display Menu with options to enter a score, determine a result or print stars"""  # Not sure about name?
     score = 0
     print(MENU_STRING)
     choice = input(">>> ").upper()
@@ -26,7 +26,7 @@ def main():
 
 
 def get_valid_score():
-    """Get a valid score between 0 and 100"""
+    """Get a valid score between 0 and 100"""  # Should this include error checking for ValueError? eg"string"
     score = int(input("Enter score: "))
     while score < 0 or score > 100:
         print("Invalid score")
