@@ -7,11 +7,11 @@ Fixed program to determine score status using functions
 def main():
     """Get a score and display its status """
     score = float(input("Enter score: "))
-    print(determine_status(score))
+    print(determine_grade(score))
 
 
-def determine_status(score):
-    """Determine the status of score passed in"""
+def determine_grade(score):
+    """Determine the status of score pass in"""
     if score < 0 or score > 100:
         print("Invalid score")
     elif score >= 90:
