@@ -7,14 +7,14 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-    # data = get_data()
-    # print(data)
-    report = display_subject_details()  # I understand the error but is this ok? Why?
-    print(report)
+    """Display subject data"""
+    data = get_data()
+    display_subject_details(data)
 
 
 def get_data():
     """Read data from file formatted like: subject,lecturer,number of students."""
+    data = []
     input_file = open(FILENAME)
     for line in input_file:
         print(line)  # See what a line looks like
@@ -25,19 +25,15 @@ def get_data():
         parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
         print(parts)  # See if that worked
         print("----------")
+        data.append(parts)
     input_file.close()
+    return data
 
 
-def display_subject_details():
-    input_file = open(FILENAME)
-    for line in input_file:
-        line = line.strip()  # Remove the \n
-        parts = line.split(',')  # Separate the data into its parts
-        parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
-        print(f"{parts[0]} is taught by {parts[1]} and has {parts[2]} students")
-    input_file.close()
+def display_subject_details(data):
+    """display data in formatted way"""  # I don't know what to name this
+    for subject_data in data:
+        print(f"{subject_data[0]} is taught by {subject_data[1]:12} and has {subject_data[2]:3} students")
 
 
 main()
-
-# check answers
