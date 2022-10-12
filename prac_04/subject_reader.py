@@ -7,8 +7,10 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-    data = get_data()
-    print(data)
+    # data = get_data()
+    # print(data)
+    report = display_subject_details()  # I understand the error but is this ok? Why?
+    print(report)
 
 
 def get_data():
@@ -26,4 +28,16 @@ def get_data():
     input_file.close()
 
 
+def display_subject_details():
+    input_file = open(FILENAME)
+    for line in input_file:
+        line = line.strip()  # Remove the \n
+        parts = line.split(',')  # Separate the data into its parts
+        parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
+        print(f"{parts[0]} is taught by {parts[1]} and has {parts[2]} students")
+    input_file.close()
+
+
 main()
+
+# check answers
