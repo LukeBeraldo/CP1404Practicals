@@ -26,3 +26,6 @@ def main():
         # print(f"{number:2}" for number in quick_pick)
         "Corrected after looking at solutions"
         print(" ".join(f"{number:2}" for number in quick_pick))
+
+
+main()
