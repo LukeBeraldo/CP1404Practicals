@@ -27,4 +27,4 @@ with open("wimbledon.csv", "r", encoding="utf-8-sig") as in_file:
         print(f"{name} {count}")
 
     print(f"These {len(countries)} countries have won Wimbledon")
-    print(f"{countries}")
+    print(", ".join(countries))
