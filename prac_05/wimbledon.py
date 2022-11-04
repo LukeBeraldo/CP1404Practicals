@@ -10,8 +10,8 @@ COUNTRIES_INDEX = 1
 def main():
     """Get record data and display information about Wimbledon champions and there countires """
     record_entries = get_records()
-    champion_to_count, countries = process_information(record_entries)
-
+    champion_to_wins, countries = process_information(record_entries)
+    display_information(champion_to_wins, countries)
 
 def get_records():
     """Get records from file and add to a list"""
@@ -36,6 +36,8 @@ def process_information(record_entries):
             champion_to_wins[record[CHAMPION_INDEX]] = 1
     return champion_to_wins, countries
 
+
+def display_information(champion_to_wins, countries):
     print("Wimbledon Champions:")
     for name, count in champion_to_wins.items():
         print(f"{name} {count}")
