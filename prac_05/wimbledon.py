@@ -26,4 +26,5 @@ with open("wimbledon.csv", "r", encoding="utf-8-sig") as in_file:
     for name, count in champion_to_wins.items():
         print(f"{name} {count}")
 
-    print(f"These {countries} countries have won Wimbledon")
+    print(f"These {len(countries)} countries have won Wimbledon")
+    print(f"{countries}")
