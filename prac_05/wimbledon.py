@@ -13,6 +13,7 @@ def main():
     champion_to_wins, countries = process_information(record_entries)
     display_information(champion_to_wins, countries)
 
+
 def get_records():
     """Get records from file and add to a list"""
     record_entries = []
@@ -45,3 +46,6 @@ def display_information(champion_to_wins, countries):
     print(f"These {len(countries)} countries have won Wimbledon")
     # couldn't figure out list comprehension, got it from solutions
     print(", ".join(country for country in sorted(countries)))
+
+
+main()
