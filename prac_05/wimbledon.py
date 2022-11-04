@@ -13,11 +13,15 @@ with open("wimbledon.csv", "r", encoding="utf-8-sig") as in_file:
         record_entry.append(parts)
 
     champion_to_wins = {}
+    countries = set()
     for record in record_entry:
         try:
             champion_to_wins[record[CHAMPION_INDEX]] += 1
         except KeyError:
             champion_to_wins[record[CHAMPION_INDEX]] = 1
 
+    print("Wimbledon Champions:")
     for name, count in champion_to_wins.items():
         print(f"{name} {count}")
+
+    print(f"These {countries} countries have won Wimbledon")
