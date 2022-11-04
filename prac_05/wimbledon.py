@@ -10,7 +10,7 @@ COUNTRIES_INDEX = 1
 def main():
     """Get record data and display information about Wimbledon champions and there countires """
     record_entries = get_records()
-    process_information(record_entries)
+    champion_to_count, countries = process_information(record_entries)
 
 
 def get_records():
@@ -24,15 +24,17 @@ def get_records():
     return record_entries
 
 
-def process_information(record_entry):
+def process_information(record_entries):
+    """Map champion and number of wins to a dictionary and add winning country to a set"""  # SRP?
     champion_to_wins = {}
     countries = set()
-    for record in record_entry:
+    for record in record_entries:
         countries.add(record[COUNTRIES_INDEX])
         try:
             champion_to_wins[record[CHAMPION_INDEX]] += 1
         except KeyError:
             champion_to_wins[record[CHAMPION_INDEX]] = 1
+    return champion_to_wins, countries
 
     print("Wimbledon Champions:")
     for name, count in champion_to_wins.items():
