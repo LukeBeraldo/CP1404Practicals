@@ -9,19 +9,22 @@ COUNTRIES_INDEX = 1
 
 def main():
     """Get record data and display information about Wimbledon champions and there countires """
-    get_records()
+    record_entries = get_records()
+    process_information(record_entries)
 
 
 def get_records():
     """Get records from file and add to a list"""
-    record_entry = []
+    record_entries = []
     with open("wimbledon.csv", "r", encoding="utf-8-sig") as in_file:
         in_file.readline()  # Is this the only way to get rid of the first row?
         for line in in_file:
             parts = line.strip().split(",")
-            record_entry.append(parts)
-    return record_entry
+            record_entries.append(parts)
+    return record_entries
 
+
+def process_information(record_entry):
     champion_to_wins = {}
     countries = set()
     for record in record_entry:
