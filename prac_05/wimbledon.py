@@ -4,6 +4,7 @@ Estimate: 30 minutes
 Actual:   40 minutes
 """
 CHAMPION_INDEX = 2
+COUNTRIES_INDEX = 1
 
 record_entry = []
 with open("wimbledon.csv", "r", encoding="utf-8-sig") as in_file:
@@ -15,6 +16,7 @@ with open("wimbledon.csv", "r", encoding="utf-8-sig") as in_file:
     champion_to_wins = {}
     countries = set()
     for record in record_entry:
+        countries.add(record[COUNTRIES_INDEX])
         try:
             champion_to_wins[record[CHAMPION_INDEX]] += 1
         except KeyError:
