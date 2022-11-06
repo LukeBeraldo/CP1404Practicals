@@ -17,8 +17,14 @@ def main():
     limo = Car(100)
     # 2. Add 20 more units of fuel to this new car object using the add method.
     limo.add_fuel(20)
-    print(f"limo has {limo.fuel}")
-
+    # 3. Print the amount of fuel in the car.
+    print(f"limo has {limo.fuel} fuel")
+    # 4. Attempt to drive the car 115 km using the drive method.
+    limo.drive(115)
+    print(f"limo has {limo.fuel} fuel")
+    # 5. Using f-string formatting. Make it return a string in the following format:
+    # Car, fuel=42, odometer=277
+    print(limo)
 
 
 main()
