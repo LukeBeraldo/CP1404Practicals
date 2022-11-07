@@ -17,4 +17,8 @@ class ProgrammingLanguage:
         return f"{self.name}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year}"
 
     def is_dynamic(self):
-        pass
+        """Will return True if the language is dynamically typed else False"""
+        if self.typing == "Dynamic":
+            return True
+        else:
+            return False
