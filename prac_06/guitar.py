@@ -1,5 +1,5 @@
 """CP1404/CP5632 Practical - Guitar class example."""
-CURRENT_YEAR = 2017
+CURRENT_YEAR = 2022
 VINTAGE_AGE = 50
 
 
